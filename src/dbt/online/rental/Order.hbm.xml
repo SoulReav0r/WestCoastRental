@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="dbt.online.rental.Menu">
+	<class name="dbt.online.rental.Order" table="MYORDER">
+		<id name="MYORDER_ID" type="int">
+			<meta attribute="scope-set">protected</meta>
+			<generator class="native"></generator>
+		</id>
+
+		<property name="orderDate" type="string"/>
+		<property name="totalPrice" type="float" not-null="true" />
+
+		<many-to-one name="customer" column="CUSTOMER_ID"
+			class="dbt.online.rental.Customer" />
+		
+		<!--
+		<set name="offers" 
+			inverse="true"
+			cascade="save-update, delete, delete-orphan">			
+			<key column="OFFER_ID"/>
+			<many-to-many class="dbt.online.rental.Offer"/>
+		</set>
+		-->
+		<set name="offers" table="map_order_menu" cascade="save-update, delete, delete-orphan">			
+			<key column="MYORDER_ID"/>
+			<many-to-many class="dbt.online.rental.Offer" column="OFFER_ID" />
+		</set>
+	</class>
+</hibernate-mapping>

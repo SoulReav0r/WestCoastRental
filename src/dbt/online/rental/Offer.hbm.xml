@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="dbt.online.rental">
+  <class name="dbt.online.rental.Offer" table="OFFER" >
+    	<id name="OFFER_ID" type="int">
+			<meta attribute="scope-set">protected</meta>
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="name" type="string" not-null="true"/>
+		<property name="discount" type="int" not-null="true"/>
+		<property name="price" type="float" not-null="true"/>
+		
+		<!--
+		<set name="offer" 
+			inverse="true"
+			cascade="save-update, delete, delete-orphan">			
+			<key column="OFFER_ID"/>
+			<many-to-many class="dbt.online.rental.Offer"/>
+		</set>	
+		-->
+		
+		<set name="Collections" table="map_offer_collection" cascade="save-update, delete, delete-orphan">			
+			<key column="OFFER_ID"/>
+			<many-to-many class="dbt.online.rental.Collection" column="COLLECTION_ID" />
+		</set>
+		
+  </class>
+</hibernate-mapping>
