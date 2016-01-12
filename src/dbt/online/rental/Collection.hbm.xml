@@ -19,7 +19,7 @@
 		</set>
 		-->
 		
-		<set name="Item" table="map_product_ingredient" cascade="save-update, delete, delete-orphan">			
+		<set name="Item" table="map_collection_item" cascade="save-update, delete, delete-orphan">			
 			<key column="COLLECTION_ID"/>
 			<many-to-many class="dbt.online.rental.Item" column="ITEM_ID" />
 		</set>

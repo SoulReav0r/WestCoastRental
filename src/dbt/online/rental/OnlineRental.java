@@ -15,7 +15,7 @@ public class OnlineRental {
 		
 		Customer customer1 = new Customer("Chuck Norris", "Texas", "roundhouse@kick.punch");
 		Customer customer2 = new Customer("Deine Mutter", "Keller", "mother@mydirtyhobby.com");
-		Customer customer5 = new Customer("Bernd Stromberg", "Hameln", "kontakt@kapitol.de");
+		Customer customer3 = new Customer("Bernd Stromberg", "Hameln", "kontakt@kapitol.de");
 		
 		//add items (price per day, name)
 		Item i1 = new Item(10, "bicycle man");
