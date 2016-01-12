@@ -8,7 +8,8 @@ import java.util.Set;
 public class Order extends DBCommunication<Order>{
 
 	private int MYORDER_ID=0;
-	private String orderDate;
+	private String orderDate; // Datentyp Date Rückgabe Datum
+	private String returnDate;
 	private float totalPrice;
 	private Customer customer;
 	private Set<Offer> offer = new HashSet<Offer>();
@@ -61,6 +62,7 @@ public class Order extends DBCommunication<Order>{
 	public void setTotalPrice(float totalPrice) {
 		this.totalPrice = getOffersPrice();
 	}
+	
 	public Customer getCustomer() {
 		return this.customer;
 	}

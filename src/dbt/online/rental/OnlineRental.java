@@ -18,9 +18,9 @@ public class OnlineRental {
 		Customer customer3 = new Customer("Bernd Stromberg", "Hameln", "kontakt@kapitol.de");
 		
 		//add items (price per day, name)
-		Item i1 = new Item(10, "bicycle man");
-		Item i2 = new Item(12, "bicycle woman");
-		Item i3 = new Item(5, "bicycle child");
+		Item i1 = new Item(10, "bicycle man XL");
+		Item i2 = new Item(12, "bicycle woman S");
+		Item i3 = new Item(5, "bicycle child XS");
 		Item i4 = new Item(20, "Tandem");
 		Item i5 = new Item(100, "E-Bike 500PS");
 		Item i6 = new Item(3, "Trike");

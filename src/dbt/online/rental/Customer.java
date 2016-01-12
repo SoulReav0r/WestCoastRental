@@ -11,11 +11,11 @@ public class Customer extends DBCommunication<Customer>{
 	private String email;
 	private Set<Order> Orders = new HashSet<Order>();
 	
-	public Customer(String gname, String gaddress, String gemail) {
+	public Customer(String name, String address, String email) {
 		super();
-		this.name=gname;
-		this.address=gaddress;
-		this.email=gemail;
+		this.name=name;
+		this.address=address;
+		this.email=email;
 		this.execute(this, METHOD.CREATE);
 	}
 

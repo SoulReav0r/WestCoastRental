@@ -6,12 +6,14 @@ public class Item extends DBCommunication<Item>{
 	private float price;
 	private String name;
 	private String shape;
+	private boolean available;
 
 	public Item(float price, String name) {
 		super();
 		this.price = price;
 		this.name = name;
 		this.shape = "mint";
+		this.setAvailable(true); 
 		this.execute(this, METHOD.CREATE);
 	}
 
@@ -49,5 +51,13 @@ public class Item extends DBCommunication<Item>{
 
 	public void setShape(String condition) {
 		this.shape = condition;
+	}
+
+	public boolean isAvailable() {
+		return available;
+	}
+
+	public void setAvailable(boolean available) {
+		this.available = available;
 	}
 }
