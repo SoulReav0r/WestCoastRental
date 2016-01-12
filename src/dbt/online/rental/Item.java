@@ -37,8 +37,8 @@ public class Item extends DBCommunication<Item>{
 		return ITEM_ID;
 	}
 
-	public void setITEM_ID(int iNGREDIENT_ID) {
-		ITEM_ID = iNGREDIENT_ID;
+	public void setITEM_ID(int item_ID) {
+		ITEM_ID = item_ID;
 	}
 
 	public String toString(){		
