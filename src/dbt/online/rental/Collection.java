@@ -10,16 +10,16 @@ public class Collection extends DBCommunication<Collection>{
 	private String name;
 	private Set<Item> items = new HashSet<Item>();
 		
-	public Collection(float gprice, String gname) {
+	public Collection(float price, String name) {
 		super();
-		this.price=gprice;
-		this.name=gname;
+		this.price=price;
+		this.name=name;
 		this.execute(this, METHOD.CREATE);
 	}
 	
-	public void addItem(Item ing){
-		items.add(ing);
-		this.price = this.price + ing.getPrice();
+	public void addItem(Item item){
+		items.add(item);
+		this.price = this.price + item.getPrice();
 		this.execute(this, METHOD.UPDATE);
 	}
 	

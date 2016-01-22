@@ -36,8 +36,8 @@ public class Offer extends DBCommunication<Offer>{
 	}
 
 
-	public void setOFFER_ID(int mENU_ID) {
-		OFFER_ID = mENU_ID;
+	public void setOFFER_ID(int offer_ID) {
+		OFFER_ID = offer_ID;
 	}
 
 

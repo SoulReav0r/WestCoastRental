@@ -8,7 +8,7 @@ import java.util.Set;
 public class Order extends DBCommunication<Order>{
 
 	private int MYORDER_ID=0;
-	private String orderDate; // Datentyp Date Rückgabe Datum
+	private String rentDate; // Datentyp Date Rückgabe Datum
 	private String returnDate;
 	private float totalPrice;
 	private Customer customer;
@@ -16,7 +16,7 @@ public class Order extends DBCommunication<Order>{
 	
 	public Order(Customer customer) {
 		super();
-		orderDate = (new Timestamp(System.currentTimeMillis())).toString();
+		rentDate = (new Timestamp(System.currentTimeMillis())).toString();
 		this.customer = customer;
 		this.execute(this, METHOD.CREATE);
 	}
@@ -40,10 +40,10 @@ public class Order extends DBCommunication<Order>{
 		MYORDER_ID = oRDER_ID;
 	}
 	public String getOrderDate() {
-		return orderDate;
+		return rentDate;
 	}
 	public void setOrderDate(String date) {
-		this.orderDate = date;
+		this.rentDate = date;
 	}
 	
 	private float getOffersPrice(){
@@ -77,7 +77,7 @@ public class Order extends DBCommunication<Order>{
 	}
 
 	public String toString(){
-		String returnString = "Order-" + this.MYORDER_ID + "->" + this.customer.toString() + "->Date:" + this.orderDate.toString()+ "->Price:" + this.totalPrice + "[\n" ;
+		String returnString = "Order-" + this.MYORDER_ID + "->" + this.customer.toString() + "->Date:" + this.rentDate.toString()+ "->Price:" + this.totalPrice + "[\n" ;
 		for(Offer offer : offer){
 			returnString += offer.toString();
 		}
